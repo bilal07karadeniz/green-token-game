@@ -45,10 +45,16 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: white;
+/* Header Text Hover Effect */
+header nav ul li a {
+    transition: color 0.3s ease; /* Renk değişimi için 0.3 saniyelik bir geçiş ekledik */
     text-decoration: none;
-    font-size: 18px;
+    color: white; /* Başlangıç rengi beyaz */
+}
+
+header nav ul li a:hover {
+    color: #3D550C; /* Açık sarı renk hover durumunda */
+    text-decoration: none; /* Alt çizgiyi kaldırıyoruz */
 }
 
 /* Hero Section */
@@ -65,57 +71,117 @@ nav ul li a {
 
 /* NFTs Section */
 #nfts {
-    background-color: #59981A; /* Green background for NFTs section */
-    padding: 40px;
-    text-align: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Bu, içeriği alt tarafa yaslar */
-    align-items: center; /* Orta hizalar */
-    height: 400px; /* Yükseklik ekleyebilirsiniz */
+    position: relative;
+    background-color: #59981A; /* Yeşil arka plan */
+    padding: 0; /* İç padding'i sıfırladık */
+    height: 400px; /* Yükseklik */
 }
 
+/* NFTs Section */
 #nfts {
-    background-color: #59981A; /* Green background for NFTs section */
-    padding: 40px;
+    position: relative;
+    background-color: #59981A; /* Yeşil arka plan */
+    padding: 0; /* İç padding'i sıfırladık */
+    height: 400px; /* Yükseklik */
+}
+
+/* Background image sections */
+#nfts .background {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#nfts .background .left, #nfts .background .right {
+    flex: 1; /* Eşit genişlikte bölümlere ayırır */
+    background-size: cover; /* Resimlerin tam genişlikte görünmesini sağlar */
+    background-position: center; /* Resimlerin ortalanmasını sağlar */
+    position: relative;
+}
+
+/* Sol tarafın resmi */
+#nfts .background .left {
+    background-image: url('images/solar-panel-background.jpg');
+}
+
+/* Sağ tarafın resmi */
+#nfts .background .right {
+    background-image: url('images/wind-turbine-background.jpg');
+}
+
+/* Siyah filtre */
+#nfts .background .left::before, #nfts .background .right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah filtre */
+    z-index: 1; /* Filtreyi resmin üzerine yerleştirir */
+}
+
+/* Title Styling */
+#nfts h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Beyaz renk */
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px; /* Padding ekledik */
+    text-align: center;
+    z-index: 2; /* Metni ön planda tutar */
+}
+
+/* Buy Button Styling */
+.buy-button {
+    position: absolute;
+    bottom: 20px; /* Butonu aşağıya yerleştirir */
+    left: 50%;
+    transform: translateX(-50%); /* Ortalar */
+    background-color: #B9E09B; /* Açık yeşil renk */
+    color: #3D550C; /* Dark green text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 3; /* Buton metnin önünde görünür */
+}
+
+.buy-button:hover {
+    background-color: #3D550C; /* Koyu yeşil hover rengi */
+    color: white; /* White text on hover */
+}
+
+.buy-button:active {
+    background-color: #ECF87F; /* Açık sarı arka plan aktif durum */
+    border-color: #ECF87F; /* Border matches active background */
+}
+
+/* Overlay text styling */
+#nfts .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    display: flex;
-    flex-direction: column; /* İçeriği dikey olarak hizalar */
-    align-items: center; /* Yatayda ortalar */
-    max-height: 500px; /* Maksimum yükseklik belirledik */
-    height: auto; /* İçeriğe göre yüksekliğin otomatik ayarlanması */
-    overflow: hidden; /* İçeriğin taşmasını engeller */
+    font-size: 24px;
+    z-index: 2;
 }
 
-/* NFT List Section */
-.nft-list {
-    display: flex;
-    flex-direction: row; /* NFT kartlarını yatayda hizalar */
-    justify-content: space-around; /* Kartlar arasında eşit boşluk bırakır */
-    margin-top: 20px;
-    width: 100%; /* Yatayda tam genişlik */
+#nfts .overlay h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-/* NFT Card Styling - Wind Turbine NFT */
-.nft-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 200px;
-    padding: 20px;
-    text-align: center;
-    color: #3D550C; /* Dark green text for NFT card */
-    margin: 10px; /* Kartlar arasında boşluk bırakır */
-}
-
-.nft-card h3, .nft-card p {
-    color: #3D550C; /* Dark green text for titles and descriptions */
-}
-
-.nft-card .description {
-    color: #3D550C;
+#nfts .overlay p {
+    font-size: 18px;
 }
 
 /* Passive Income Section */
