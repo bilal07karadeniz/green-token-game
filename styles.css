@@ -1,0 +1,160 @@
+/* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ECF87F; /* Pale yellow background */
+    color: #3D550C; /* Dark green text */
+}
+
+/* Header Section */
+header {
+    background-color: #81B622; /* Bright green for header */
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    height: 100px; /* Header yüksekliği */
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px; /* Logo ve connect wallet arasında boşluk bırakır */
+}
+
+header .logo img {
+    height: 80px; /* Adjust logo height */
+    width: auto; /* Keep aspect ratio intact */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #FFFFFF; /* White background for hero section */
+    padding: 50px 0;
+    text-align: center;
+    color: #3D550C; /* Dark green text */
+}
+
+#hero h1 {
+    font-size: 36px;
+}
+
+/* NFTs Section */
+#nfts {
+    background-color: #59981A; /* Green background for NFTs section */
+    padding: 40px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Bu, içeriği alt tarafa yaslar */
+    align-items: center; /* Orta hizalar */
+    height: 400px; /* Yükseklik ekleyebilirsiniz */
+}
+
+#nfts {
+    background-color: #59981A; /* Green background for NFTs section */
+    padding: 40px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column; /* İçeriği dikey olarak hizalar */
+    align-items: center; /* Yatayda ortalar */
+    max-height: 500px; /* Maksimum yükseklik belirledik */
+    height: auto; /* İçeriğe göre yüksekliğin otomatik ayarlanması */
+    overflow: hidden; /* İçeriğin taşmasını engeller */
+}
+
+/* NFT List Section */
+.nft-list {
+    display: flex;
+    flex-direction: row; /* NFT kartlarını yatayda hizalar */
+    justify-content: space-around; /* Kartlar arasında eşit boşluk bırakır */
+    margin-top: 20px;
+    width: 100%; /* Yatayda tam genişlik */
+}
+
+/* NFT Card Styling - Wind Turbine NFT */
+.nft-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    color: #3D550C; /* Dark green text for NFT card */
+    margin: 10px; /* Kartlar arasında boşluk bırakır */
+}
+
+.nft-card h3, .nft-card p {
+    color: #3D550C; /* Dark green text for titles and descriptions */
+}
+
+.nft-card .description {
+    color: #3D550C;
+}
+
+/* Passive Income Section */
+#passive-income {
+    background-color: #FFFFFF; 
+    padding: 40px;
+    text-align: center;
+    color: #3D550C; 
+}
+
+/* Footer Section */
+footer {
+    background-color: #3D550C; /* Dark green footer background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Connect Wallet Button - Positioned in the top-right corner */
+#connect-wallet {
+    position: absolute;
+    right: 20px; /* Sağda olmasını sağlar */
+    background-color: #B9E09B; /* Daha açık yeşil renk */
+    color: #3D550C; /* Dark green text */
+    border: 2px solid #B9E09B; /* Border matches the background */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#connect-wallet:hover {
+    background-color: #3D550C; /* Koyu yeşil hover rengi */
+    color: white; /* White text on hover */
+    border-color: #3D550C; /* Koyu yeşil border hover */
+}
+
+#connect-wallet:active {
+    background-color: #ECF87F; /* Açık sarı arka plan aktif durum */
+    border-color: #ECF87F; /* Border matches active background */
+}
