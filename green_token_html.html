@@ -32,10 +32,10 @@
         <h2>Our Energy NFTs</h2>
         <div class="background">
             <div class="left">
-                <button class="buy-button" onclick="purchaseNFT(1)">Buy Solar Panel NFT</button>
+                <button class="buy-button" onclick="openModal('Solar Panel')">Buy Solar Panel NFT</button>
             </div>
             <div class="right">
-                <button class="buy-button" onclick="purchaseNFT(2)">Buy Wind Turbine NFT</button>
+                <button class="buy-button" onclick="openModal('Wind Turbine')">Buy Wind Turbine NFT</button>
             </div>
         </div>
     </section>
@@ -51,6 +51,19 @@
     <footer>
         <p>&copy; 2024 EcoNFT Energy. All rights reserved.</p>
     </footer>
+
+    <!-- Modal Popup for Purchase Confirmation -->
+<div id="purchase-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Confirm Your Purchase</h2>
+        <p id="nft-info">You are about to purchase: </p>
+        <div class="modal-buttons">
+            <button id="confirm-purchase" onclick="confirmPurchase()">Confirm Purchase</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>

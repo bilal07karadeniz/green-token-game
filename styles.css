@@ -11,6 +11,12 @@ body {
     color: #3D550C; /* Dark green text */
 }
 
+/* Arka plana siyah filtre eklemek için */
+body.modal-open {
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah filtre */
+    transition: background-color 0.3s ease; /* Yavaş geçiş için */
+}
+
 /* Header Section */
 header {
     background-color: #81B622; /* Bright green for header */
@@ -67,14 +73,6 @@ header nav ul li a:hover {
 
 #hero h1 {
     font-size: 36px;
-}
-
-/* NFTs Section */
-#nfts {
-    position: relative;
-    background-color: #59981A; /* Yeşil arka plan */
-    padding: 0; /* İç padding'i sıfırladık */
-    height: 400px; /* Yükseklik */
 }
 
 /* NFTs Section */
@@ -163,27 +161,6 @@ header nav ul li a:hover {
     border-color: #ECF87F; /* Border matches active background */
 }
 
-/* Overlay text styling */
-#nfts .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    z-index: 2;
-}
-
-#nfts .overlay h3 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-#nfts .overlay p {
-    font-size: 18px;
-}
-
 /* Passive Income Section */
 #passive-income {
     background-color: #FFFFFF; 
@@ -216,11 +193,167 @@ footer {
 
 #connect-wallet:hover {
     background-color: #3D550C; /* Koyu yeşil hover rengi */
-    color: white; /* White text on hover */
-    border-color: #3D550C; /* Koyu yeşil border hover */
+    color: white; /* Beyaz metin hover durumunda */
+    border-color: #3D550C; /* Koyu yeşil border hover durumunda */
 }
 
 #connect-wallet:active {
-    background-color: #ECF87F; /* Açık sarı arka plan aktif durum */
-    border-color: #ECF87F; /* Border matches active background */
+    background-color: #ECF87F; /* Açık sarı arka plan aktif durumda */
+    color: #3D550C; /* Koyu yeşil metin aktif durumda */
+    border-color: #ECF87F; /* Açık sarı border aktif durumda */
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Yarı saydam siyah arka plan */
+    z-index: 1000; /* Modal'ı en üstte tutar */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF; /* Beyaz arka plan */
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px; /* Modal genişliği */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+/* Modal başlık stili */
+.modal h2 {
+    font-size: 24px;
+    color: #3D550C; /* Başlık için koyu yeşil renk */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Modal metin stili */
+.modal p {
+    font-size: 16px;
+    color: #6D6D6D; /* Açık gri metin rengi */
+    margin-bottom: 30px;
+}
+
+/* Kapatma butonu */
+.close-btn {
+    font-size: 30px;
+    color: #AAA;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.close-btn:hover {
+    color: #3D550C; /* Hover durumunda yeşil */
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Yarı saydam siyah arka plan */
+    z-index: 1000; /* Modal'ı en üstte tutar */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF; /* Beyaz arka plan */
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px; /* Modal genişliği */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+/* Modal başlık stili */
+.modal h2 {
+    font-size: 24px;
+    color: #3D550C; /* Başlık için koyu yeşil renk */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Modal metin stili */
+.modal p {
+    font-size: 16px;
+    color: #6D6D6D; /* Açık gri metin rengi */
+    margin-bottom: 30px;
+}
+
+/* Kapatma butonu */
+.close-btn {
+    font-size: 30px;
+    color: #AAA;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.close-btn:hover {
+    color: #3D550C; /* Hover durumunda yeşil */
+}
+
+/* Modal Butonları - Flexbox düzeni */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between; /* Butonları yatayda ayırır */
+    margin-top: 20px;
+}
+
+.modal button {
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Yeşil buton */
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 48%; /* Butonların genişliği */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal button:hover {
+    background-color: #45a049; /* Hover durumunda koyu yeşil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hover sırasında hafif gölge */
+}
+
+.modal button:active {
+    background-color: #3D550C; /* Aktif durumda koyu yeşil */
+    box-shadow: none; /* Gölgeyi kaldır */
+}
+
+/* Cancel Button */
+.modal .cancel-btn {
+    background-color: #F44336; /* Kırmızı renk */
+}
+
+.modal .cancel-btn:hover {
+    background-color: #D32F2F; /* Hoverda koyu kırmızı */
+}
+
+/* Confirm Button */
+#confirm-purchase {
+    background-color: #4CAF50; /* Yeşil renk */
+}
+
+#confirm-purchase:hover {
+    background-color: #45a049; /* Hoverda koyu yeşil */
 }
