@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renewable Energy NFT</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <!-- Logo -->
         <div class="logo">
             <img src="images/logoo.png" alt="EcoNFT Energy Logo" />
         </div>
@@ -19,7 +21,6 @@
                 <li><a href="#passive-income">Passive Income</a></li>
             </ul>
         </nav>
-        <!-- Connect Wallet Button -->
         <button id="connect-wallet">Connect Wallet</button>
     </header>
 
@@ -32,10 +33,10 @@
         <h2>Our Energy NFTs</h2>
         <div class="background">
             <div class="left">
-                <button class="buy-button" onclick="openModal('Solar Panel')">Buy Solar Panel NFT</button>
+                <button class="buy-button">Buy Solar Panel NFT</button>
             </div>
             <div class="right">
-                <button class="buy-button" onclick="openModal('Wind Turbine')">Buy Wind Turbine NFT</button>
+                <button class="buy-button">Buy Wind Turbine NFT</button>
             </div>
         </div>
     </section>
@@ -53,18 +54,19 @@
     </footer>
 
     <!-- Modal Popup for Purchase Confirmation -->
-<div id="purchase-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h2>Confirm Your Purchase</h2>
-        <p id="nft-info">You are about to purchase: </p>
-        <div class="modal-buttons">
-            <button id="confirm-purchase" onclick="confirmPurchase()">Confirm Purchase</button>
-            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+    <div id="purchase-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Confirm Your Purchase</h2>
+            <p id="nft-info">You are about to purchase: </p>
+            <div class="modal-buttons">
+                <button id="confirm-purchase">Confirm Purchase</button>
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            </div>
         </div>
     </div>
-</div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.41.0/dist/index.iife.js"></script>
 </body>
 </html>

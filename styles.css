@@ -5,10 +5,24 @@
     box-sizing: border-box;
 }
 
+.work-sans-bold {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 700; /* Bold ağırlık */
+    font-style: normal; /* Normal yazı stili */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ECF87F; /* Pale yellow background */
-    color: #3D550C; /* Dark green text */
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    color: #3D550C;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+button {
+    font-weight: 700;
 }
 
 /* Arka plana siyah filtre eklemek için */
@@ -23,6 +37,7 @@ header {
     padding: 10px;
     text-align: center;
     position: relative;
+    font-family: "Work Sans", sans-serif;
     color: white;
     display: flex;
     justify-content: center; /* Yatayda ortalar */
@@ -39,6 +54,22 @@ header .logo {
 header .logo img {
     height: 80px; /* Adjust logo height */
     width: auto; /* Keep aspect ratio intact */
+}
+
+header h1 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 700; /* Bold */
+    font-size: 36px; /* Başlık yazı boyutunu artırdık */
+    color: #FFFFFF; /* Beyaz renk */
+    margin: 10px 0; /* Üst ve alt boşluk */
+}
+
+header p {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400; /* Normal ağırlık */
+    font-size: 18px; /* Paragraf boyutunu ayarladık */
+    color: #D3E5FF; /* Daha yumuşak beyaz ton */
+    margin: 5px 0;
 }
 
 nav ul {
@@ -163,10 +194,10 @@ header nav ul li a:hover {
 
 /* Passive Income Section */
 #passive-income {
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
     padding: 40px;
     text-align: center;
-    color: #3D550C; 
+    color: #3D550C;
 }
 
 /* Footer Section */
@@ -238,80 +269,13 @@ footer {
 
 /* Modal metin stili */
 .modal p {
-    font-size: 16px;
+    font-size: 16px; /* Yazı boyutu */
     color: #6D6D6D; /* Açık gri metin rengi */
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Alt boşluk */
+    line-height: 1.5; /* Satır yüksekliği */
 }
 
-/* Kapatma butonu */
-.close-btn {
-    font-size: 30px;
-    color: #AAA;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.close-btn:hover {
-    color: #3D550C; /* Hover durumunda yeşil */
-}
-
-/* Modal Styling */
-.modal {
-    display: none; /* Başlangıçta gizli */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Yarı saydam siyah arka plan */
-    z-index: 1000; /* Modal'ı en üstte tutar */
-}
-
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FFFFFF; /* Beyaz arka plan */
-    padding: 30px;
-    border-radius: 12px;
-    width: 350px; /* Modal genişliği */
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge */
-}
-
-/* Modal başlık stili */
-.modal h2 {
-    font-size: 24px;
-    color: #3D550C; /* Başlık için koyu yeşil renk */
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-/* Modal metin stili */
-.modal p {
-    font-size: 16px;
-    color: #6D6D6D; /* Açık gri metin rengi */
-    margin-bottom: 30px;
-}
-
-/* Kapatma butonu */
-.close-btn {
-    font-size: 30px;
-    color: #AAA;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.close-btn:hover {
-    color: #3D550C; /* Hover durumunda yeşil */
-}
-
-/* Modal Butonları - Flexbox düzeni */
+/* Modal Buttons - Flexbox düzeni */
 .modal-buttons {
     display: flex;
     justify-content: space-between; /* Butonları yatayda ayırır */
@@ -356,4 +320,61 @@ footer {
 
 #confirm-purchase:hover {
     background-color: #45a049; /* Hoverda koyu yeşil */
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px; /* Scrollbar genişliği */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3D550C; /* Scrollbar kolları için renk */
+    border-radius: 10px; /* Kolların yuvarlak olması */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F1F1F1; /* Scrollbar izinin rengi */
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #3D550C; /* Koyu yeşil arka plan */
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Tooltip'in konumunu ayarlar */
+    left: 50%;
+    margin-left: -60px; /* Tooltip'in yatayda ortalanması için */
+    opacity: 0;
+    transition: opacity 0.3s; /* Yavaşça görünür hale gelmesini sağlar */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Fade in animasyonu */
 }
